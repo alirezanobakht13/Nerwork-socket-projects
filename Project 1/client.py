@@ -8,7 +8,7 @@ UDP = socket.SOCK_DGRAM
 configs = {
     'IP_Address':'localhost',
     'IP_version':IPv4,
-    'PORT':12346,
+    'PORT':12345,
     'Transport_type':TCP
 }
 

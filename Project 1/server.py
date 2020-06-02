@@ -10,7 +10,7 @@ UDP = socket.SOCK_DGRAM
 configs = {
     'IP_Address':'localhost',
     'IP_version':IPv4,
-    'PORT':12346,
+    'PORT':12345,
     'Transport_type':TCP,
     'Clients_limit':2,
     'timeout':2    #choose your timeout in second or None if you don't need timeout
@@ -18,7 +18,6 @@ configs = {
 
 
 S = socket.socket(configs['IP_version'],configs['Transport_type'])
-
 S.bind((configs['IP_Address'],configs['PORT']))
 S.listen(configs['Clients_limit']+2)
 
