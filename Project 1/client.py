@@ -1,15 +1,35 @@
 import socket
 
-S = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+IPv4 = socket.AF_INET
+IPv6 = socket.AF_INET6
+TCP = socket.SOCK_STREAM
+UDP = socket.SOCK_DGRAM
 
-S.connect(("127.0.0.1",12345))
-num1 = 1
-num2 = 2
-data1 = str(num1).encode()
-data2 = str(num2).encode()
-S.send(data1)
-S.recv(1024)
-S.send(data2)
-result =S.recv(1024)
-print(result.decode())
-S.close()
+configs = {
+    'IP_Address':'localhost',
+    'IP_version':IPv4,
+    'PORT':12346,
+    'Transport_type':TCP
+}
+
+
+S = socket.socket(configs['IP_version'],configs['Transport_type'])
+
+S.connect((configs['IP_Address'],configs['PORT']))
+info = S.recv(1024)
+if info.decode() == 'welcome':
+    print(info.decode())
+    try:
+        while True:
+            data1=input().encode()
+            data2=input().encode()
+            S.send(data1)
+            S.recv(1024)
+            S.send(data2)
+            result =S.recv(1024)
+            print(result.decode())
+    except:
+        print('disconnected:(')
+else:
+    print(info.decode())
+    S.close()
