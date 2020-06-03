@@ -5,7 +5,7 @@ this is socket programming projects from isfahan university of technology networ
  in each project first run **server** by command `python server.py` in windows cmd (or `python3 server.py` in mac/linux)
 </br>
 then run **client** by command `python client.py` in windows cmd (or `python3 client.py` in mac/linux)
-> **Note:** Project1 can have multiple client running
+> **Note:** Project1 can have multiple clients running
 
 ## Project 1
 It's simple client server model that each clinet send two numbers to server and receives sum of those as a result.
