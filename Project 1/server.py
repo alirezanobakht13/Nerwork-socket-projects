@@ -13,7 +13,7 @@ configs = {
     'PORT':12345,
     'Transport_type':TCP,
     'Clients_limit':2,
-    'timeout':2    #choose your timeout in second or None if you don't need timeout
+    'timeout':None  #choose your timeout in second or None if you don't need timeout
 }
 
 
